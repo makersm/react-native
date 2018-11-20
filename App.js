@@ -8,6 +8,8 @@
 
 import React, { Component } from 'react';
 import {Platform, StyleSheet, Text, View, Image, ListView} from 'react-native';
+import GeolocationExample from './components/GeolocationExample';
+import WatchPositionExample from './components/WatchPositionExample';
 var MOCKED_MOVIES_DATA = [
     {title: 'Title', year: '2015', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
 ];
@@ -72,16 +74,20 @@ export default class App extends Component<Props> {
         );
     }
     render() {
-        if(!this.state.loaded) {
-            return this.renderLoadingView();
-        }
-
+        // if(!this.state.loaded) {
+        //     return this.renderLoadingView();
+        // }
+        //
+        // return (
+        //     <ListView
+        //         dataSource={this.state.dataSource}
+        //         renderRow={this.renderMovie}
+        //         style={styles.listView}
+        //     />
+        // );
         return (
-            <ListView
-                dataSource={this.state.dataSource}
-                renderRow={this.renderMovie}
-                style={styles.listView}
-            />
+          // <GeolocationExample />
+          <WatchPositionExample />
         );
     }
 }
